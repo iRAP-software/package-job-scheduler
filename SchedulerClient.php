@@ -90,7 +90,7 @@ class SchedulerClient
         
         $responseArray = $this->sendRequest($request);
         
-        $addTaskResponse = new AddTaskResponse($responseArray);
+        $addTaskResponse = new Responses\AddTaskResponse($responseArray);
         
         
         if (!$addTaskResponse->isOk())
@@ -118,7 +118,7 @@ class SchedulerClient
         
         
         $responseArray = $this->sendRequest($request);
-        $getTaskResponse = new GetTaskResponse($responseArray);
+        $getTaskResponse = new Responses\GetTaskResponse($responseArray);
         
         if ($getTaskResponse->isOk())
         {
@@ -154,7 +154,7 @@ class SchedulerClient
         );
         
         $response = $this->sendRequest($request);
-        $baseResponse = new BaseResponse($response);
+        $baseResponse = new Responses\BaseResponse($response);
         
         if (!$baseResponse->isOk())
         {
@@ -181,7 +181,7 @@ class SchedulerClient
         
         $responseArray = $this->sendRequest($request);
         
-        $baseResponse = new BaseResponse($responseArray);
+        $baseResponse = new Responses\BaseResponse($responseArray);
         
         if (!$baseResponse->isOk())
         {
@@ -204,7 +204,7 @@ class SchedulerClient
     {
         $request = array('action' => 'get_info');
         $responseArray = $this->sendRequest($request);
-        $getInfoResponse = new GetInfoResponse($responseArray);
+        $getInfoResponse = new Responses\GetInfoResponse($responseArray);
         return $getInfoResponse;
     }
     
